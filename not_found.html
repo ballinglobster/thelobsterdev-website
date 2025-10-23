@@ -10,7 +10,7 @@
     </head>
     <body>
         <header class="site-header">
-            <h1>TheLobsterDev</h1>
+            <h1><a class="site-headerText" href="/index.html">TheLobsterDev</a></h1>
             <nav>
                 <ul>
                     <li><a class="navigationheader" href="/index.html">Home</a></li>
@@ -21,8 +21,10 @@
             </nav>
         </header>
 
-                <main>
-            
+        <main>
+            <h2 class="not_found-message-header">404 - Page Not Found</h2>
+            <p class="not_found-message">Sorry, the page you are looking for does not exist.</p>
+            <button class="not_found-home-button" onclick="window.location.href='/index.html'">Go to Home</button>
         </main>
         
         <script>
@@ -32,8 +34,14 @@
                 window.addEventListener("DOMContentLoaded", 
                 function onDom()
                 {
-                    document.documentElement.classList.remove('is-rendering');
-                    document.documentElement.classList.add('is-rendered');
+                    requestAnimationFrame(function()
+                    {
+                        requestAnimationFrame(function()
+                        {
+                            document.documentElement.classList.remove('is-rendering');
+                            document.documentElement.classList.add('is-rendered');
+                        });
+                    });
                     window.removeEventListener("DOMContentLoaded", onDom);
                 });
 

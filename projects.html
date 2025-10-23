@@ -10,7 +10,7 @@
     </head>
     <body>
         <header class="site-header">
-            <h1>TheLobsterDev</h1>
+            <h1><a class="site-headerText" href="/index.html">TheLobsterDev</a></h1>
             <nav>
                 <ul>
                     <li><a class="navigationheader" href="/index.html">Home</a></li>
@@ -31,8 +31,14 @@
                 window.addEventListener("DOMContentLoaded", 
                 function onDom()
                 {
-                    document.documentElement.classList.remove('is-rendering');
-                    document.documentElement.classList.add('is-rendered');
+                    requestAnimationFrame(function()
+                    {
+                        requestAnimationFrame(function()
+                        {
+                            document.documentElement.classList.remove('is-rendering');
+                            document.documentElement.classList.add('is-rendered');
+                        });
+                    });
                     window.removeEventListener("DOMContentLoaded", onDom);
                 });
 

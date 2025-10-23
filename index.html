@@ -48,8 +48,14 @@
                 window.addEventListener("DOMContentLoaded", 
                 function onDom()
                 {
-                    document.documentElement.classList.remove('is-rendering');
-                    document.documentElement.classList.add('is-rendered');
+                    requestAnimationFrame(function()
+                    {
+                        requestAnimationFrame(function()
+                        {
+                            document.documentElement.classList.remove('is-rendering');
+                            document.documentElement.classList.add('is-rendered');
+                        });
+                    });
                     window.removeEventListener("DOMContentLoaded", onDom);
                 });
 
