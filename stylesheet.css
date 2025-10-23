@@ -1,0 +1,172 @@
+/* Basic reset */
+* { box-sizing: border-box; }
+html, body 
+{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+}
+
+/* Sticky header */
+.site-header 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #000000;
+    color: aliceblue;
+    /* border-bottom: 1px solid #e0e0e0; */
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    height: 64px; /* reference height used for main padding */
+}
+
+.site-headerText
+{
+    display: inline-block;
+    transform-origin: center;
+    font-size: 40px;
+    color: #ffffff;
+    transition: transform 200ms ease, color 150ms ease;
+    will-change: transform;
+    text-decoration: none;
+}
+
+.site-headerText:hover, .site-headerText:focus
+{
+    color: red;
+    outline: none;
+    transform: scale(1.05);
+}
+
+/* Keep page content visible below the fixed header */
+main 
+{
+    padding: 20px;
+    padding-top: 64px;
+    color: #ffffff;
+}
+
+/* Navigation styles */
+nav ul 
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 16px;
+}
+
+nav a 
+{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: transform 200ms ease, color 150ms ease;
+    will-change: transform;
+}
+
+.navigationheader:hover, .navigationheader:focus
+{
+    transform: scale(1.3);
+    color: red;
+    outline: none;
+}
+
+.currentpage
+{
+    color: #ffffff;
+    text-decoration: underline;
+    text-decoration-color: #ffffff;
+    font-weight: 600;
+    display: inline-block;
+    transition: transform 200ms ease, color 150ms ease;
+    will-change: transform;
+}
+
+.currentpage:hover, .currentpage:focus
+{
+    transform: scale(1.3);
+    color: red;
+    outline: none;
+}
+
+/* Homepage background image section */
+.homepage-bgimage-bleed
+{
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    background-image: url("images/homepagebackground.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    padding: 80px 20px;
+}
+
+.homepage-bgimage-bleed .inner
+{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.homepage-bgimage-bleed > .inner
+{
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive: stack header on narrow screens */
+@media (max-width: 600px) 
+{
+    .site-header 
+    {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 12px;
+    }
+    main 
+    {
+        padding-top: calc(12px + 20px + 40px); /* extra space to account for header height variation */
+    }
+}
+
+/* page load transitions */
+:root
+{
+    --page-trans-ms: 600ms;
+    --page-trans-ease: ease;
+}
+
+/* Initial state: hide body content */
+html.is-rendering body
+{
+    opacity: 0;
+}
+
+/* smooth transition to visible state for body */
+body
+{
+    transition: opacity var(--page-trans-ms) var(--page-trans-ease),
+                transform var(--page-trans-ms) var(--page-trans-ease);
+    will-change: opacity, transform;
+}
+
+/* Final state: show body content */
+html.is-rendered body
+{
+    opacity: 1;
+    transform: none;
+}

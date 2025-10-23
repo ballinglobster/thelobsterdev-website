@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TheLobsterDev</title>
+        <script>document.documentElement.classList.add('is-rendering');</script>
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body>
+        <header class="site-header">
+            <h1><a class="site-headerText" href="/index.html">TheLobsterDev</a></h1>
+            <nav>
+                <ul>
+                    <li><a class="currentpage" href="/index.html">Home</a></li>
+                    <li><a class="navigationheader" href="/about.html">About</a></li>
+                    <li><a class="navigationheader" href="/projects.html">Projects</a></li>
+                    <li><a class="navigationheader" href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="homepage-bgimage-bleed">
+                <div class="inner">
+                    <h2>Welcome to TheLobsterDev!</h2>
+                    <p>Your go-to place for web development projects and resources.</p>
+                </div>
+            </section>
+            <section id="about">
+                <h2>About Me</h2>
+                <p>This is a brief introduction about TheLobsterDev.</p>
+            </section>
+            <section id="projects">
+                <h2>Projects</h2>
+                <p>Here are some of my projects.</p>
+            </section>
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>You can reach me at</p>
+            </section>
+        </main>
+
+        <script>
+            (function()
+            {
+                const TRANS_MS = 600;
+                window.addEventListener("DOMContentLoaded", 
+                function onDom()
+                {
+                    document.documentElement.classList.remove('is-rendering');
+                    document.documentElement.classList.add('is-rendered');
+                    window.removeEventListener("DOMContentLoaded", onDom);
+                });
+
+                document.addEventListener("click",
+                    function(e)
+                    {
+                        const a = e.target.closest("a[href]");
+                        if(!a) return;
+                        const href = a.getAttribute("href");
+                        if(!href || href.startsWith("http") || href.startsWith("#") || href.startsWith("mailto:") || a.target === "_blank") return;
+                        e.preventDefault();
+                        document.documentElement.classList.add("is-rendering");
+                        setTimeout
+                        (
+                            function()
+                            {
+                                window.location.href = href;
+                            },
+                            TRANS_MS
+                        );
+                    },
+                    false
+                );
+            })();
+        </script>
+                    
+    </body>
+</html>
