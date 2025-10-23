@@ -30,7 +30,7 @@ html, body
 {
     display: inline-block;
     transform-origin: center;
-    font-size: 40px;
+    font-size: 32px;
     color: #ffffff;
     transition: transform 200ms ease, color 150ms ease;
     will-change: transform;
@@ -83,7 +83,7 @@ nav a
 {
     color: #ffffff;
     text-decoration: underline;
-    text-decoration-color: #ffffff;
+    text-decoration-color: red;
     font-weight: 600;
     display: inline-block;
     transition: transform 200ms ease, color 150ms ease;

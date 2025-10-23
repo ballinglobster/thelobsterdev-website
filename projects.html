@@ -3,7 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TheLobsterDev</title>
+        <title>Projects</title>
+        <icon> <link rel="icon" type="image/x-icon" href="images/favicon.ico"></icon>
+        <script>document.documentElement.classList.add('is-rendering');</script>
         <link rel="stylesheet" href="stylesheet.css">
     </head>
     <body>
@@ -18,4 +20,43 @@
                 </ul>
             </nav>
         </header>
+        <main>
+            
+        </main>
+        
+        <script>
+            (function()
+            {
+                const TRANS_MS = 600;
+                window.addEventListener("DOMContentLoaded", 
+                function onDom()
+                {
+                    document.documentElement.classList.remove('is-rendering');
+                    document.documentElement.classList.add('is-rendered');
+                    window.removeEventListener("DOMContentLoaded", onDom);
+                });
+
+                /* document.addEventListener("click",
+                    function(e)
+                    {
+                        const a = e.target.closest("a[href]");
+                        if(!a) return;
+                        const href = a.getAttribute("href");
+                        if(!href || href.startsWith("http") || href.startsWith("#") || href.startsWith("mailto:") || a.target === "_blank") return;
+                        e.preventDefault();
+                        document.documentElement.classList.add("is-rendering");
+                        setTimeout
+                        (
+                            function()
+                            {
+                                window.location.href = href;
+                            },
+                            TRANS_MS
+                        );
+                    },
+                    false
+                ); */
+            })();
+        </script>
+    </body>
 </html>
