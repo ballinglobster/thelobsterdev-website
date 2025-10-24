@@ -8,7 +8,15 @@
         <script>document.documentElement.classList.add('is-rendering');</script>
         <link rel="stylesheet" href="stylesheet.css">
     </head>
-    <body>>
+    <style>
+        body
+        {
+            background-color: #151716;
+            opacity: 0.8;
+            background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #000000 10px );
+        }
+    </style>
+    <body>
         <header class="site-header">
             <h1><a class="site-headerText" href="/index.html">TheLobsterDev</a></h1>
             <nav>
@@ -22,7 +30,43 @@
         </header>
 
         <main>
-            
+            <h2 class="contactpageheader">Contact Me</h2>
+            <p class="contactpageparagraph">If you have any questions or inquiries, feel free to reach out with the contact form below or connect with me on social media!</p>
+            <p class="social-icons-contact">
+                <span class="tooltip">
+                    <a href="https://www.linkedin.com/in/danischoofs"><img class="aboutmeiconsfirst" src="Social Media Icons/Linkedin-white.png" alt="LinkedIn"></a>
+                    <span class="tooltiptext" id="tt-linkedin" role="tooltip">Connect on LinkedIn</span>
+                </span>
+                <span class="tooltip">
+                    <a href="https://github.com/ballinglobster"><img class="aboutmeroundicons" src="Social Media Icons/Github-white.png" alt="GitHub"></a>
+                    <span class="tooltiptext" id="tt-github" role="tooltip">Connect on GitHub</span>
+                </span>
+                <span class="tooltip">
+                    <a href="https://instagram.com/ballinglobster"><img class="aboutmeicons" src="Social Media Icons/Instagram-white.png" alt="Instagram"></a>
+                    <span class="tooltiptext" id="tt-instagram" role="tooltip">Connect on Instagram</span>
+                </span>
+                <span class="tooltip">
+                    <a href="https://bsky.app/profile/thelobster.dev"><img class="aboutmeicons" src="Social Media Icons/bluesky-white.png" alt="Bluesky"></a>
+                    <span class="tooltiptext" id="tt-bluesky" role="tooltip">Connect on Bluesky</span>
+                </span>
+            </p>
+
+            <h3 class="contactheader">Get in Touch!</h3>
+            <form id="contact-form" class="contact-form" novalidate>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Jane Doe">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="jane@example.com">
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Hi — I'd like to ask about..."></textarea>
+
+                <button type="submit">Send Message</button>
+
+                <p id="contact-status" aria-live="polite" style="margin-top: .5rem;"></p>
+            </form>
+            <script src="contactform.js" defer></script>
         </main>
         
         <script>

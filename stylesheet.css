@@ -207,3 +207,247 @@ html.is-rendered body
     outline: none;
     transform: scale(1.1);
 }
+
+/* Contact form styles */
+form 
+{
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+button[type="submit"] 
+{
+    background-color: red;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 200ms ease, transform 200ms ease;
+    will-change: background-color, transform;
+}
+
+button[type="submit"]:hover, button[type="submit"]:focus 
+{
+    background-color: darkred;
+    outline: none;
+    transform: scale(1.05);
+}
+
+.contactheader
+{
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+input[id="name"], input[id ="email"], textarea[id="message"]
+{
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* About Me styles */
+.me-image
+{
+    position: relative;
+    display: block;
+    margin: 20px auto;
+    max-width: 650px;
+    height: auto;
+    border-radius: 20px;
+    float: right;
+    border: #000000 8px solid;
+}
+
+@media (max-width: 600px) 
+{
+    .me-image
+    {
+        float: none;
+        display: block;
+        margin: 20px auto;
+    }
+}
+
+.aboutmeheader
+{
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+.aboutmeparagraph
+{
+    font-size: 20px;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+.aboutline
+{
+    margin-top: -20px;
+}
+
+.aboutreachoutlink
+{
+    color: white;
+    text-decoration: underline;
+    transition: color 150ms ease;
+    will-change: color;
+}
+
+.aboutreachoutlink:hover, .aboutreachoutlink:focus
+{
+    color: red;
+    outline: none;
+}
+
+.aboutmeskillslist
+{
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 1.6;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.aboutmeiconsfirst
+{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-top: 0;
+    margin-left: 8px;
+}
+
+.aboutmeicons
+{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-top: 0;
+    margin-left: 20px;
+}
+
+.aboutmeroundicons
+{
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-top: 0;
+    margin-left: 20px;
+}
+
+.aboutmeiconsfirst:hover, .aboutmeiconsfirst:focus,
+.aboutmeicons:hover, .aboutmeicons:focus,
+.aboutmeroundicons:hover, .aboutmeroundicons:focus
+{
+    transform: scale(1.2);
+    transition: transform 200ms ease;
+    will-change: transform;
+
+}
+
+.social-icons
+{
+    padding-left: 8px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Tooltip styles */
+.tooltip 
+{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltiptext 
+{
+    position: absolute;
+    bottom: 125%;
+    left: 65%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    background: rgba(0,0,0,0.9);
+    color: #ffffff;
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 160ms ease, visibility 160ms ease;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+
+    max-width: calc(100vw - 32px);
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+}
+
+.tooltiptext::after 
+{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.9) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext,
+.tooltip:focus-within .tooltiptext
+{
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+@media (max-width: 420px) 
+{
+    .tooltiptext { bottom: auto; top: 125%; left: 50%; transform: translateX(-50%); max-width: calc(100vw - 24px); }
+    .tooltiptext::after { top: -12px; border-color: transparent transparent rgba(0,0,0,0.9) transparent; }
+}
+
+/* Contact page styles */
+.contactpageheader
+{
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.contactpageparagraph
+{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.social-icons-contact
+{
+    padding-left: 8px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
