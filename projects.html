@@ -32,7 +32,65 @@
             </nav>
         </header>
         <main>
+            <h2 class="projectspageheader">Projects</h2>
+            <p class="projectspageparagraph">Here are some of my projects. More coming soon!</p>
             
+            <nav class="project-filters" role="tablist" aria-label="Project categories">
+                <span class="project-tag" data-filter="all" tabindex="0" role="button" aria-pressed="true">All</span>
+                <span class="project-tag" data-filter="3d-art" tabindex="0" role="button">3D Art</span>
+                <span class="project-tag" data-filter="2d-art" tabindex="0" role="button">2D Art</span>
+                <span class="project-tag" data-filter="design" tabindex="0" role="button">Design</span>
+                <span class="project-tag" data-filter="programming" tabindex="0" role="button">Programming</span>
+                <span class="project-tag" data-filter="web-dev" tabindex="0" role="button">Web Development</span>
+                <span class="project-tag" data-filter="game-design" tabindex="0" role="button">Game Design</span>
+                <span class="project-tag" data-filter="other" tabindex="0" role="button">Other</span>
+            </nav>
+
+            <div class="projects-grid" aria-live="polite">
+                <!--
+                     <article class="project-card" data-category="3d-art">...</article> -->
+                     <article class="project-card" data-category="3d-art game-design">
+                        <a href="/projects/project1.html" class="project-link">
+                        <img src="images/projects/project1.png" alt="Project 1 — 3D scene">
+                        <div class="card-caption">3D Scene — Project 1</div>
+                        </a>
+                    </article>
+
+                    <article class="project-card" data-category="2d-art design">
+                        <a href="/projects/project2.html" class="project-link">
+                        <img src="images/projects/project2.png" alt="Project 2 — 2D illustrations">
+                        <div class="card-caption">2D Illustrations — Project 2</div>
+                        </a>
+                    </article>
+
+                    <article class="project-card" data-category="programming web-dev">
+                        <a href="/projects/project3.html" class="project-link">
+                        <img src="images/projects/project3.png" alt="Project 3 — web app">
+                        <div class="card-caption">Web App — Project 3</div>
+                        </a>
+                    </article>
+
+                    <article class="project-card" data-category="3d-art animation">
+                        <a href="/projects/project4.html" class="project-link">
+                        <img src="images/projects/project4.png" alt="Project 4 — 3D character">
+                        <div class="card-caption">3D Character — Project 4</div>
+                        </a>
+                    </article>
+
+                    <article class="project-card" data-category="design ui-ux">
+                        <a href="/projects/project5.html" class="project-link">
+                        <img src="images/projects/project5.png" alt="Project 5 — UI/UX">
+                        <div class="card-caption">UI/UX — Project 5</div>
+                        </a>
+                    </article>
+
+                    <article class="project-card" data-category="other audio">
+                        <a href="/projects/project6.html" class="project-link">
+                        <img src="images/projects/project6.png" alt="Project 6 — audio">
+                        <div class="card-caption">Audio Experiments — Project 6</div>
+                        </a>
+                    </article>
+            </div>
         </main>
         
         <script>
@@ -73,6 +131,82 @@
                     },
                     false
                 ); */
+
+                document.addEventListener('DOMContentLoaded', () => 
+                {
+                const tags = Array.from(document.querySelectorAll('.project-tag'));
+                if (!tags.length) return;
+
+                function activate(tag) 
+                {
+                    tags.forEach(t => 
+                    {
+                    t.classList.remove('active');
+                    t.setAttribute('aria-pressed', 'false');
+                    });
+                    tag.classList.add('active');
+                    tag.setAttribute('aria-pressed', 'true');
+
+                    const filter = tag.dataset.filter || 'all';
+                    document.querySelector('.projects-grid')?.setAttribute('data-filter', filter);
+                    document.dispatchEvent(new CustomEvent('projects.filter', { detail: { filter } }));
+                }
+
+                tags.forEach(t => 
+                {
+                    if (!t.hasAttribute('role')) t.setAttribute('role', 'button');
+                    if (!t.hasAttribute('tabindex')) t.setAttribute('tabindex', '0');
+
+                    t.addEventListener('click', () => activate(t));
+                    t.addEventListener('keydown', e => 
+                    {
+                    if (e.key === 'Enter' || e.key === ' ') 
+                    {
+                        e.preventDefault();
+                        activate(t);
+                    }
+                    });
+                });
+
+                const initial = tags.find(t => t.getAttribute('aria-pressed') === 'true') || tags[0];
+                if (initial) activate(initial);
+                });
+
+                document.addEventListener('DOMContentLoaded', () => 
+                {
+                const grid = document.querySelector('.projects-grid');
+                if (!grid) return;
+
+                const applyFilter = (filter) => 
+                {
+                    const cards = Array.from(document.querySelectorAll('.project-card'));
+                    cards.forEach(card => 
+                    {
+                    const cats = (card.dataset.category || '').split(/\s+/).filter(Boolean);
+                    const match = filter === 'all' || cats.includes(filter);
+                    card.classList.toggle('hidden', !match);
+                    card.setAttribute('aria-hidden', match ? 'false' : 'true');
+                    });
+                };
+
+                // respond to the custom event dispatched by the existing activation code
+                document.addEventListener('projects.filter', (e) => 
+                {
+                    applyFilter(e?.detail?.filter || 'all');
+                });
+
+                // also apply filter when a tag is clicked (in case activation doesn't dispatch)
+                document.querySelectorAll('.project-tag').forEach(t => 
+                {
+                    t.addEventListener('click', () => applyFilter(t.dataset.filter || 'all'));
+                });
+
+                // initial filter: prefer grid[data-filter], then active tag, then 'all'
+                const initial = grid.getAttribute('data-filter')
+                                || document.querySelector('.project-tag[aria-pressed="true"]')?.dataset.filter
+                                || 'all';
+                applyFilter(initial);
+                });
             })();
         </script>
     </body>

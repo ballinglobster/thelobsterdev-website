@@ -34,22 +34,38 @@
         <main>
             <section class="homepage-bgimage-bleed">
                 <div class="inner">
-                    <h2>Welcome to TheLobsterDev!</h2>
-                    <p>Your go-to place for web development projects and resources.</p>
+                    <h2>Hi, I'm Dani!</h2>
+                    <p>I love creating all sorts of digital experiences such as engaging games, interactive websites, and immersive storytelling.</p>
+                    <a class="homepage-about-button" href="/projects.html">View My Projects</a>
+                    <a class="homepage-about-button" href="/about.html">Learn More About Me</a>
                 </div>
             </section>
-            <section id="about">
-                <h2>About Me</h2>
-                <p>This is a brief introduction about TheLobsterDev.</p>
-            </section>
-            <section id="projects">
-                <h2>Projects</h2>
-                <p>Here are some of my projects.</p>
-            </section>
-            <section id="contact">
-                <h2>Contact</h2>
-                <p>You can reach me at</p>
-            </section>
+            <h2 class="homepageheader">My Projects</h2>
+            <p class="homepageparagraph">Here are some of my recent works. To see all of my projects, please visit the <a class="homepageprojectslink" href="/projects.html">projects page</a>.</p>
+            <div class="projects-grid" aria-live="polite">
+                <!--
+                     <article class="project-card" data-category="3d-art">...</article> -->
+                     <article class="project-card" data-category="3d-art game-design">
+                        <a href="/projects/project1.html" class="project-link">
+                        <img src="images/projects/project1.png" alt="Project 1 — 3D scene">
+                        <div class="card-caption">3D Scene — Project 1</div>
+                        </a>
+                    </article>
+
+                    <article class="project-card" data-category="2d-art design">
+                        <a href="/projects/project2.html" class="project-link">
+                        <img src="images/projects/project2.png" alt="Project 2 — 2D illustrations">
+                        <div class="card-caption">2D Illustrations — Project 2</div>
+                        </a>
+                    </article>
+
+                    <article class="project-card" data-category="programming web-dev">
+                        <a href="/projects/project3.html" class="project-link">
+                        <img src="images/projects/project3.png" alt="Project 3 — web app">
+                        <div class="card-caption">Web App — Project 3</div>
+                        </a>
+                    </article>
+            </div>
         </main>
 
         <script>

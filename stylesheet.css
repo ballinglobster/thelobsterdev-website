@@ -120,6 +120,7 @@ nav a
     background-repeat: no-repeat;
     color: #ffffff;
     padding: 80px 20px;
+    border-bottom: #ffffff 1px solid;
 }
 
 .homepage-bgimage-bleed .inner
@@ -132,6 +133,57 @@ nav a
 {
     position: relative;
     z-index: 1;
+}
+
+.homepage-about-button
+{
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: black;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 200ms ease, background-color 200ms ease;
+    will-change: transform, background-color;
+    text-decoration: none;
+}
+.homepage-about-button:hover, .homepage-about-button:focus
+{
+    background-color: #151716;
+    outline: none;
+    transform: scale(1.1);
+}
+
+.homepageheader
+{
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.homepageparagraph
+{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 60px;
+}
+
+.homepageprojectslink
+{
+    color: white;
+    text-decoration: underline;
+    transition: color 150ms ease;
+    will-change: color;
+}
+
+.homepageprojectslink:hover, .homepageprojectslink:focus
+{
+    color: red;
+    outline: none;
 }
 
 /* Responsive: stack header on narrow screens */
@@ -457,4 +509,132 @@ input[id="name"], input[id ="email"], textarea[id="message"]
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+/* Projects page styles */
+.projectspageheader
+{
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+.projectspageparagraph
+{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 60px;
+}
+
+.project-filters
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: -5px 0 32px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-tag
+{
+    color: #ffffff;
+    background-color: transparent;
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 15px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 150ms ease, color 150ms ease, transform 150ms ease;
+    will-change: background-color, color, transform;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-tag:hover, .project-tag:focus
+{
+    background-color: rgba(255, 255, 255, 0.06);
+    transform: translateY(-1px);
+    color: lightcoral;
+}
+
+.project-tag[aria-pressed="true"],
+.project-tag:active
+{
+    background-color: red;
+    color: #ffffff;
+    border-color: red;
+    transform: none;
+}
+
+@media (max-width: 520px) 
+{
+    .project-tag { padding: 6px 10px; font-size: 14px; }
+}
+
+.projects-grid
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 12px;
+}
+
+.project-card
+{
+    background-color: #000000;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 6px 18px rgba(255, 255, 255, 0.5);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    will-change: transform, box-shadow;
+}
+
+.project-card:hover, .project-card:focus-within
+{
+    transform: translateY(-6px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6);
+}
+
+.project-link
+{
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.project-card img
+{
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background-color: #111111;
+}
+
+.card-caption
+{
+    padding: 12px;
+    font-size: 16px;
+    color: #ffffff;
+    background: linear-gradient(180deg, rgba(255,255,255,0,0.02), transparent);
+}
+
+.project-card.hidden
+{
+    display: none !important;
+}
+
+@media (max-width: 960px) 
+{
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .project-card img { height: 160px; }
+}
+@media (max-width: 560px) 
+{
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-card img { height: 220px; }
 }
