@@ -1,5 +1,7 @@
 # TheLobsterDev Website
 A public repository for my HTML + CSS + JavaScript website hosted on https://thelobster.dev
+<br>
+<br>
 Feel free to take a look at my website to:
 - See my projects
 - Contact me
