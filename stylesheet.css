@@ -5,6 +5,10 @@ html
     scroll-behavior: smooth;
     min-height: 100%;
     margin: 0;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #000000 transparent;
+    overflow-x: hidden;
 }
 
 body 
@@ -18,14 +22,14 @@ body
 /* Sticky header */
 .site-header 
 {
-    position: fixed;
+    position: sticky !important;
     top: 0;
     left: 0;
     right: 0;
     background: #000000;
     color: aliceblue;
     border-bottom: 1px solid #e0e0e0;
-    z-index: 1000;
+    z-index: 1000000000;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -54,8 +58,7 @@ body
 /* Keep page content visible below the fixed header */
 main 
 {
-    padding: 20px;
-    padding-top: 64px;
+    padding: 0px;
     color: #ffffff;
 }
 
@@ -270,14 +273,18 @@ html.is-rendered body
 /* Contact form styles */
 form 
 {
-    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
     padding: 20px;
     border-radius: 20px;
     max-width: 600px;
+    height: auto;
     margin: 0 auto;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    border: 2px solid rgba(255,255,255,0.06);
 }
 
 button[type="submit"] 
@@ -321,7 +328,7 @@ input[id="name"], input[id ="email"], textarea[id="message"]
     position: relative;
     display: block;
     margin: 20px auto;
-    max-width: 650px;
+    max-width: 500px;
     height: auto;
     border-radius: 20px;
     float: right;
@@ -342,6 +349,7 @@ input[id="name"], input[id ="email"], textarea[id="message"]
 {
     font-size: 50px;
     margin-top: 20px;
+    margin-left: 20px;
 }
 
 .aboutmeparagraph
@@ -349,11 +357,15 @@ input[id="name"], input[id ="email"], textarea[id="message"]
     font-size: 20px;
     line-height: 1.6;
     margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 675px;
+    margin-bottom: 20px;
 }
 
 .aboutline
 {
     margin-top: -20px;
+    margin-left: 20px;
 }
 
 .aboutreachoutlink
@@ -376,7 +388,7 @@ input[id="name"], input[id ="email"], textarea[id="message"]
     font-size: 20px;
     line-height: 1.6;
     gap: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 30px;
 }
 
 .aboutmeiconsfirst
@@ -580,6 +592,7 @@ input[id="name"], input[id ="email"], textarea[id="message"]
     max-width: 1200px;
     margin: 0 auto 80px;
     padding: 0 12px;
+    box-sizing: border-box;
 }
 
 .project-card
@@ -609,7 +622,7 @@ input[id="name"], input[id ="email"], textarea[id="message"]
 .project-card img
 {
     display: block;
-    width: 100%;
+    max-width: 100%;
     height: 180px;
     object-fit: cover;
     background-color: #111111;
@@ -638,3 +651,216 @@ input[id="name"], input[id ="email"], textarea[id="message"]
   .projects-grid { grid-template-columns: 1fr; }
   .project-card img { height: 220px; }
 }
+
+/* Footer styles */
+footer 
+{
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 12px 20px;
+    border-top: 1px solid #e0e0e0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+.footer-text
+{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.footer-link
+{
+    color: white;
+    text-decoration: underline;
+    transition: color 150ms ease;
+    will-change: color;
+}
+
+.footer-link:hover, .footer-link:focus
+{
+    color: red;
+    outline: none;
+}
+
+/* project download button */
+.projectsdownloadbutton
+{
+    display: inline-block;
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: red;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 200ms ease, background-color 200ms ease;
+    will-change: transform, background-color;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.projectsdownloadbutton:hover, .projectsdownloadbutton:focus
+{
+    background-color: darkred;
+    outline: none;
+    transform: scale(1.1);
+}
+
+/* page image header */
+.projectimageheader
+{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 20px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* hafoodworld page paragraph */
+.hafoodworldparagraph
+{
+    font-size: 20px;
+    margin-bottom: 40px;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+.hafoodworldsubheader
+{
+    font-size: 32px;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+.foodworld-grid
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+.hafoodworldasset
+{
+    display: inline-block;
+    max-width: 400px;
+    max-height: 400px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hafoodworldimage
+{
+    position: relative;
+    display: block;
+    margin: 0 20px 20px 20px;
+    max-width: 650px;
+    height: auto;
+    border-radius: 20px;
+    float: right;
+    border: #000000 4px solid;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 800px) 
+{
+    .hafoodworldimage
+    {
+        float: none;
+        display: block;
+        margin: 20px auto;
+    }
+}
+
+.hafoodworld-grid
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+.hafoodworld-card
+{
+    display: flex;
+    flex-direction: column;
+    background-color: #111111;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 6px 18px rgba(255, 255, 255, 0.5);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    will-change: transform, box-shadow;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.hafoodworld-card:hover, .hafoodworld-card:focus-within
+{
+    transform: translateY(-6px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6);
+}
+
+.hafoodworld-link
+{
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.hafoodworld-card img
+{
+    display: block;
+    max-width: 100%;
+    height: 180px;
+    object-fit: contain;
+    background-color: #111111;
+    margin: 0 auto
+}
+
+.hafoodworld-card-caption
+{
+    padding: 12px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.hafoodworld-card.hidden
+{
+    display: none !important;
+}
+
+@media (max-width: 960px) 
+{
+  .hafoodworld-grid { grid-template-columns: repeat(2, 1fr); }
+  .hafoodworld-card img { height: 160px; }
+}
+@media (max-width: 560px) 
+{
+  .hafoodworld-grid { grid-template-columns: 1fr; }
+  .hafoodworld-card img { height: 220px; }
+}
+
