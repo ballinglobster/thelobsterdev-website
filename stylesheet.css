@@ -335,7 +335,7 @@ input[id="name"], input[id ="email"], textarea[id="message"]
     border: #000000 8px solid;
 }
 
-@media (max-width: 600px) 
+@media (max-width: 300px) 
 {
     .me-image
     {
@@ -388,7 +388,7 @@ input[id="name"], input[id ="email"], textarea[id="message"]
     font-size: 20px;
     line-height: 1.6;
     gap: 8px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .aboutmeiconsfirst
