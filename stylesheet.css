@@ -391,6 +391,29 @@ input[id="name"], input[id ="email"], textarea[id="message"]
     margin-bottom: 40px;
 }
 
+.cvbutton
+{
+    /* display: inline-block; */
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: black;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 200ms ease, background-color 200ms ease;
+    will-change: transform, background-color;
+    text-decoration: none;
+}
+
+.cvbutton:hover, .cvbutton:focus
+{
+    background-color: #151716;
+    outline: none;
+    transform: scale(1.1);
+}
+
 .aboutmeiconsfirst
 {
     width: 50px;
