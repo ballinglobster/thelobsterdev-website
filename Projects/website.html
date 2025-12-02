@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="TheLobsterDev portfolio website template page">
+        <meta name="keywords" content="TheLobsterDev, portfolio, game design, ballinglobster">
+        <meta name="author" content="TheLobsterDev">
+        <title>TheLobsterDev</title>
+        <icon> <link rel="icon" type="image/x-icon" href="/images/favicon.ico"></icon>
+        <script>document.documentElement.classList.add('is-rendering');</script>
+        <link rel="stylesheet" href="/stylesheet.css">
+    </head>
+    <style>
+        body
+        {
+            background-color: #151716;
+            opacity: 0.8;
+            background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #000000 10px );
+        }
+    </style>
+    <body>
+        <header class="site-header">
+            <h1><a class="site-headerText" href="/index.html">TheLobsterDev</a></h1>
+            <nav>
+                <ul>
+                    <li><a class="navigationheader" href="/index.html">Home</a></li>
+                    <li><a class="navigationheader" href="/Projects.html">Projects</a></li>
+                    <li><a class="navigationheader" href="/about.html">About</a></li>
+                    <li><a class="navigationheader" href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <!-- Page content goes here -->
+        </main>
+
+        <footer>
+            <p class="footer-text">Pages:</p>
+
+            <p class="footer-links">
+                <a class="footer-link" href="/index.html">Home</a> |
+                <a class="footer-link" href="/Projects/index.html">Projects</a> |
+                <a class="footer-link" href="/about.html">About</a> |
+                <a class="footer-link" href="/contact.html">Contact</a>
+            </p>
+            <hr style="width: 50%; border-radius: 1px;">
+                <p class="social-icons">
+                <span class="tooltip">
+                    <a href="https://www.linkedin.com/in/danischoofs" target="_blank"><img class="aboutmeiconsfirst" src="Social Media Icons/Linkedin-white.png" alt="LinkedIn"></a>
+                    <span class="tooltiptext" id="tt-linkedin" role="tooltip">Connect on LinkedIn</span>
+                </span>
+                <span class="tooltip">
+                    <a href="https://github.com/ballinglobster" target="_blank"><img class="aboutmeroundicons" src="Social Media Icons/Github-white.png" alt="GitHub"></a>
+                    <span class="tooltiptext" id="tt-github" role="tooltip">Connect on GitHub</span>
+                </span>
+                <span class="tooltip">
+                    <a href="https://instagram.com/ballinglobster" target="_blank"><img class="aboutmeicons" src="Social Media Icons/Instagram-white.png" alt="Instagram"></a>
+                    <span class="tooltiptext" id="tt-instagram" role="tooltip">Connect on Instagram</span>
+                </span>
+                <span class="tooltip">
+                    <a href="https://bsky.app/profile/thelobster.dev" target="_blank"><img class="aboutmeicons" src="Social Media Icons/bluesky-white.png" alt="Bluesky"></a>
+                    <span class="tooltiptext" id="tt-bluesky" role="tooltip">Connect on Bluesky</span>
+                </span>
+                <span class="tooltip">
+                    <a href="https://itch.io/profile/ballinglobster" target="_blank"><img class="aboutmeicons" src="Social Media Icons/itchio-white.png" alt="Itch.io"></a>
+                    <span class="tooltiptext" id="tt-itch.io" role="tooltip">Connect on Itch.io</span>
+                </span>
+                </p>
+        </footer>
+        <script>
+            (function()
+            {
+                const TRANS_MS = 600;
+                window.addEventListener("DOMContentLoaded", 
+                function onDom()
+                {
+                    requestAnimationFrame(function()
+                    {
+                        requestAnimationFrame(function()
+                        {
+                            document.documentElement.classList.remove('is-rendering');
+                            document.documentElement.classList.add('is-rendered');
+                        });
+                    });
+                    window.removeEventListener("DOMContentLoaded", onDom);
+                });
+
+                /* document.addEventListener("click",
+                    function(e)
+                    {
+                        const a = e.target.closest("a[href]");
+                        if(!a) return;
+                        const href = a.getAttribute("href");
+                        if(!href || href.startsWith("http") || href.startsWith("#") || href.startsWith("mailto:") || a.target === "_blank") return;
+                        e.preventDefault();
+                        document.documentElement.classList.add("is-rendering");
+                        setTimeout
+                        (
+                            function()
+                            {
+                                window.location.href = href;
+                            },
+                            TRANS_MS
+                        );
+                    },
+                    false
+                ); */
+            })();
+        </script>
+    </body>
+</html>

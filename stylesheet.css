@@ -645,7 +645,7 @@ input[id="name"], input[id ="email"], textarea[id="message"]
 .project-card img
 {
     display: block;
-    max-width: 100%;
+    width: 100%;
     height: 180px;
     object-fit: cover;
     background-color: #111111;
@@ -667,12 +667,12 @@ input[id="name"], input[id ="email"], textarea[id="message"]
 @media (max-width: 960px) 
 {
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
-  .project-card img { height: 160px; }
+  .project-card img { height: 160px; width: 100%; object-fit: cover; }
 }
 @media (max-width: 560px) 
 {
   .projects-grid { grid-template-columns: 1fr; }
-  .project-card img { height: 220px; }
+  .project-card img { height: 220px; width: 100%; object-fit: cover; }
 }
 
 /* Footer styles */
