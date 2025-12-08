@@ -395,6 +395,7 @@ input[id="name"], input[id ="email"], textarea[id="message"]
 {
     /* display: inline-block; */
     margin-top: 20px;
+    margin-left: 20px;
     padding: 12px 24px;
     font-size: 18px;
     background-color: black;
