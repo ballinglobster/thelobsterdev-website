@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="TheLobsterDev portfolio website 404 page">
+        <meta name="description" content="TheLobsterDev portfolio website about page">
         <meta name="keywords" content="TheLobsterDev, portfolio, game design, ballinglobster">
         <meta name="author" content="TheLobsterDev">
-        <title>404</title>
+        <title>About</title>
         <icon> <link rel="icon" type="image/x-icon" href="images/favicon.ico"></icon>
         <script>document.documentElement.classList.add('is-rendering');</script>
         <link rel="stylesheet" href="stylesheet.css">
@@ -26,25 +26,68 @@
                 <ul>
                     <li><a class="navigationheader" href="/index.html">Home</a></li>
                     <li><a class="navigationheader" href="/Projects/index.html">Projects</a></li>
-                    <li><a class="navigationheader" href="/about.html">About</a></li>
-                    <li><a class="navigationheader" href="/contact.html">Contact</a></li>
+                    <li><a class="currentpage" href="/About/index.html">About</a></li>
+                    <li><a class="navigationheader" href="/Contact/index.html">Contact</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
-            <h2 class="not_found-message-header">404 - Page Not Found</h2>
-            <p class="not_found-message">Sorry, the page you are looking for does not exist.</p>
-            <button class="not_found-home-button" onclick="window.location.href='/index.html'">Go to Home</button>
+        <img class="me-image" src="images/me.png">
+            <h2 class="aboutmeheader">About Me</h2>
+            <hr class="aboutline">
+            <p class="aboutmeparagraph">Hi, I am Dani (she/they), and I am a generalist within the game development industry. I enjoy working on various aspects of game design, programming, and art, both 2D and 3D.
+                Additionally, I like to create web development projects from time to time, just like this website, which I built from scratch using HTML, CSS, and JavaScript. You can check out the source code on <a class="aboutreachoutlink" href="https://github.com/ballinglobster/thelobsterdev-website" target="_blank">GitHub</a>.
+                On this site, you can find information about my <a class="aboutreachoutlink" href="/Projects/index.html">projects</a>, skills</a>, and experience. Feel free to explore and <a class="aboutreachoutlink" href="/contact.html">reach out</a> if you have any questions or collaboration ideas!</p>
+            </p>
+            <button class="cvbutton" target="_blank" onclick="window.location.href='/Files/CV/CV-Dani-Schoofs.pdf'">CV</button>
+            <h2 class="aboutmeheader">Skills</h2>
+            <hr class="aboutline">
+            <ul class="aboutmeskillslist">
+                <li>Experienced in game- and narrative design</li>
+                <li>Experience with game engines such as Unity and GameMaker</li>
+                <li>Knowledge of 2D and 3D art creation using tools like Asesprite, Krita, and Blender</li>
+                <li>Excellent communication and teamwork abilities</li>
+                <li>Strong problem-solving skills and adaptability</li>
+                <li>Web development skills including HTML, CSS, and JavaScript</li>
+                <li>Programming knowledge in languages such as GML and C#</li>
+                <li>Familiarity with Git version control and GitHub</li>
+            </ul>
+            <!-- <h2 class="aboutmeheader">Social Media</h2>
+            <hr class="aboutline">
+            <p class="aboutmeparagraph">Feel free to connect with me on social media!</p>
+            <p class="social-icons">
+                <span class="tooltip">
+                    <a href="https://www.linkedin.com/in/danischoofs"><img class="aboutmeiconsfirst" src="Social Media Icons/Linkedin-white.png" alt="LinkedIn"></a>
+                    <span class="tooltiptext" id="tt-linkedin" role="tooltip">Connect on LinkedIn</span>
+                </span>
+                <span class="tooltip">
+                    <a href="https://github.com/ballinglobster"><img class="aboutmeroundicons" src="Social Media Icons/Github-white.png" alt="GitHub"></a>
+                    <span class="tooltiptext" id="tt-github" role="tooltip">Connect on GitHub</span>
+                </span>
+                <span class="tooltip">
+                    <a href="https://instagram.com/ballinglobster"><img class="aboutmeicons" src="Social Media Icons/Instagram-white.png" alt="Instagram"></a>
+                    <span class="tooltiptext" id="tt-instagram" role="tooltip">Connect on Instagram</span>
+                </span>
+                <span class="tooltip">
+                    <a href="https://bsky.app/profile/thelobster.dev"><img class="aboutmeicons" src="Social Media Icons/bluesky-white.png" alt="Bluesky"></a>
+                    <span class="tooltiptext" id="tt-bluesky" role="tooltip">Connect on Bluesky</span>
+                </span>
+                <span class="tooltip">
+                    <a href="https://itch.io/profile/ballinglobster"><img class="aboutmeicons" src="Social Media Icons/itchio-white.png" alt="Itch.io"></a>
+                    <span class="tooltiptext" id="tt-itch.io" role="tooltip">Connect on Itch.io</span>
+                </span>
+            </p> -->
         </main>
+
         <footer>
             <p class="footer-text">Pages:</p>
 
             <p class="footer-links">
                 <a class="footer-link" href="/index.html">Home</a> |
                 <a class="footer-link" href="/Projects/index.html">Projects</a> |
-                <a class="footer-link" href="/about.html">About</a> |
-                <a class="footer-link" href="/contact.html">Contact</a>
+                <a class="footer-link" href="/About/index.html">About</a> |
+                <a class="footer-link" href="/Contact/index.html">Contact</a>
             </p>
             <hr style="width: 50%; border-radius: 1px;">
                 <p class="social-icons">
@@ -70,6 +113,7 @@
                 </span>
                 </p>
         </footer>
+        
         <script>
             (function()
             {

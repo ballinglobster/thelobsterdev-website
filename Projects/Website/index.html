@@ -3,13 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="TheLobsterDev portfolio website homepage">
+        <meta name="description" content="TheLobsterDev portfolio website template page">
         <meta name="keywords" content="TheLobsterDev, portfolio, game design, ballinglobster">
         <meta name="author" content="TheLobsterDev">
         <title>TheLobsterDev</title>
-        <icon> <link rel="icon" type="image/x-icon" href="images/favicon.ico"></icon>
+        <icon> <link rel="icon" type="image/x-icon" href="/images/favicon.ico"></icon>
         <script>document.documentElement.classList.add('is-rendering');</script>
-        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="stylesheet" href="/stylesheet.css">
     </head>
     <style>
         body
@@ -24,7 +24,7 @@
             <h1><a class="site-headerText" href="/index.html">TheLobsterDev</a></h1>
             <nav>
                 <ul>
-                    <li><a class="currentpage" href="/index.html">Home</a></li>
+                    <li><a class="navigationheader" href="/index.html">Home</a></li>
                     <li><a class="navigationheader" href="/Projects/index.html">Projects</a></li>
                     <li><a class="navigationheader" href="/About/index.html">About</a></li>
                     <li><a class="navigationheader" href="/Contact/index.html">Contact</a></li>
@@ -32,41 +32,32 @@
             </nav>
         </header>
         <main>
-            <section class="homepage-bgimage-bleed">
-                <div class="inner">
-                    <h2>Hi, I'm Dani!</h2>
-                    <p>I love creating all sorts of digital experiences such as engaging games, interactive websites, and immersive storytelling.</p>
-                    <a class="homepage-about-button" href="/Projects/index.html">View My Projects</a>
-                    <a class="homepage-about-button" href="/About/index.html">Learn More About Me</a>
-                </div>
-            </section>
-            <h2 class="homepageheader">My Projects</h2>
-            <p class="homepageparagraph">Here are some of my recent works. To see all of my projects, please visit the <a class="homepageprojectslink" href="/Projects/index.html">projects page</a>.</p>
-            <div class="projects-grid" aria-live="polite">
-                <!--
-                     <article class="project-card" data-category="3d-art">...</article> -->
-                     <article class="project-card" data-category="3d-art game-design">
-                        <a href="/Projects/HA-FoodWorld/index.html" class="project-link">
-                        <img src="images/projects/hafoodworld.png" alt="HA: Food World">
-                        <div class="card-caption">HA: Food World</div>
-                        </a>
-                    </article>
-
-                    <article class="project-card" data-category="2d-art design">
-                        <a href="/Projects/Website/index.html" class="project-link">
-                        <img src="images/projects/project2.png" alt="Portfolio Website">
-                        <div class="card-caption">Portfolio Website</div>
-                        </a>
-                    </article>
-
-                    <article class="project-card" data-category="programming web-dev">
-                        <a href="/projects/project3.html" class="project-link">
-                        <img src="images/projects/project3.png" alt="Project 3 — web app">
-                        <div class="card-caption">Web App — Project 3</div>
-                        </a>
-                    </article>
-            </div>
+            <!-- Page content goes here -->
+            <h2 class="hafoodworldheader">Portfolio Website</h1>
+            <p class="hafoodworldparagraph">This is my personal portfolio website, the website you are on right now!
+                I designed and developed this site to showcase my projects, skills, and background in game design and development.
+                It is built using HTML, CSS, and JavaScript completely from scratch.
+            </p>
+            <p class="hafoodworldparagraph">You can find the source code on <a class="aboutreachoutlink" href="https://github.com/ballinglobster/TheLobsterDev-Website" target="_blank">GitHub</a>.</p>
+            <h3 class="hafoodworldsubheader">What I Did</h3>
+            <p class="hafoodworldparagraph">I was responsible for the entire design and development of this website. This includes:
+                <ul class="hafoodworldlist">
+                    <li>Creating the overall layout and structure using HTML</li>
+                    <li>Styling the website with CSS to achieve a visually appealing design</li>
+                    <li>Implementing interactivity and animations using JavaScript</li>
+                    <li>Ensuring the website is responsive and works well on different devices</li>
+                    <li>Optimizing performance and accessibility for a better user experience</li>
+                    <li>Adding smooth page transitions and animations</li>
+                </ul>
+            </p>
+            <h3 class="hafoodworldsubheader">What I Learned</h3>
+            <p class="hafoodworldparagraph">Creating this website has been a valuable learning experience for me. I improved my skills in web development, including HTML structure, CSS styling, and JavaScript functionality.
+                I also learned about responsive design to ensure the site looks great on various devices and screen sizes.
+                Additionally, I gained experience in optimizing website performance and accessibility.
+            </p>
+            <p class="hafoodworldparagraph">Overall, building this portfolio website has been a rewarding project that has helped me improve my web development skills and showcase my work effectively.</p>
         </main>
+
         <footer>
             <p class="footer-text">Pages:</p>
 
@@ -100,7 +91,6 @@
                 </span>
                 </p>
         </footer>
-
         <script>
             (function()
             {
@@ -141,6 +131,5 @@
                 ); */
             })();
         </script>
-                    
     </body>
 </html>
